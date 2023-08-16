@@ -1,31 +1,26 @@
-.message {
+ .message {}
 
-}
+ .imageAndText {
+   margin: 20px;
+   display: inline-block;
+ }
 
-.imageAndText {
+ .imageAndText img {
+   width: 80px;
+   height: 80px;
+ }
 
-}
+ .text {}
 
-.imageAndText img {
+ .text:after {}
 
-}
+ .name {}
 
-.text {
+ .messageText {
+   color: gray;
+ }
 
-}
-
-.text:after {
-
-}
-
-.name {
-
-}
-
-.messageText {
-
-}
-
-.time {
-
-}
+ .time {
+   text-align: center;
+   font-size: 13px;
+ }
