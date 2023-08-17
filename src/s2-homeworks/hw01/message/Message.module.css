@@ -1,8 +1,13 @@
- .message {}
+ .message {
+   padding: 2px;
+   margin-left: 10%;
+ }
 
  .imageAndText {
-   margin: 20px;
-   display: inline-block;
+   margin: 0px 5px 0 5px;
+   display: flex;
+   align-items: center;
+   gap: 30px;
  }
 
  .imageAndText img {
@@ -10,11 +15,29 @@
    height: 80px;
  }
 
- .text {}
+ .text {
+   align-self: flex-start;
+ }
 
- .text:after {}
+ .text::before {
+   left: -7px;
+   width: 20px;
+   background-color: #F5F7FB;
+   border-bottom-right-radius: 16px 14px;
+ }
 
- .name {}
+ .text:after {
+   left: -26px;
+   width: 26px;
+   background-color: white;
+   border-bottom-right-radius: 10px;
+ }
+
+
+ .name {
+   display: inline-block;
+   margin-bottom: 5px;
+ }
 
  .messageText {
    color: gray;
@@ -23,4 +46,5 @@
  .time {
    text-align: center;
    font-size: 13px;
+   color: gray;
  }

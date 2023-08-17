@@ -33,7 +33,7 @@ export const message0: MessageType = {
   id: 0,
   user: {
     avatar: avatar,
-    name: 'Some Name',
+    name: 'Sean',
   },
   message: {
     text: 'Sed ut  doloremque laudantium, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo',
@@ -48,7 +48,7 @@ export const friendMessage0: MessageType = {
   },
   message: {
     text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,  et quasi architecto beatae vitae dicta sunt explicabo',
-    time: 'Sean',
+    time: '10.00',
   },
 }
 
@@ -59,13 +59,13 @@ const HW1 = () => {
       <hr className={s2.hr} />
       <div className={s2.hw}>
         {/*проверка отображения (не менять)*/}
-        <div>
+        <div className={s2.dialogs}>
           <Message message={message0} />
           <FriendMessage message={friendMessage0} />
         </div>
-
         {/*для автоматической проверки дз (не менять)*/}
         <MessageSender M={Message} />
+        <hr className={s2.hr} />
       </div>
     </div>
   )
