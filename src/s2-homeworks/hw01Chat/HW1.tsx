@@ -42,7 +42,7 @@ export const friendMessage0: MessageType = {
     name: 'Taras',
   },
   message: {
-    text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,  et quasi architecto beatae vitae dicta sunt explicabo',
+    text: 'Sed et quasi architecto beatae vitae dicta sunt explicabo',
     time: '10.00',
   },
 }
@@ -50,14 +50,18 @@ export const friendMessage0: MessageType = {
 const HW1 = () => {
   return (
     <div className={s2.hw1} id={"hw1"}>
-      <div className={s2.hwTitle}>One case</div>
-      <hr className={s2.hr} />
-      <div className={s2.hw}>
-        {/*проверка отображения (не менять)*/}
-        <div className={s2.dialogs}>
-          <Message message={message0} />
-          <FriendMessage message={friendMessage0} />
+      <div className={s2.main}>
+        <div className={s2.hwTitle}>One case</div>
+        <hr className={s2.hr} />
+        <div className={s2.hw}>
+          {/*проверка отображения (не менять)*/}
+          <div className={s2.dialogs}>
+            <Message message={message0} />
+            <FriendMessage message={friendMessage0} />
+          </div>
         </div>
+      </div>
+      <div className="enter">
         {/*для автоматической проверки дз (не менять)*/}
         <MessageSender M={Message} />
         <hr className={s2.hr} />

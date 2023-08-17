@@ -10,7 +10,6 @@ body {
     box-sizing: border-box;
     font-family: 'Roboto';
     letter-spacing: 1px;
-    height: 100vh;
     position: relative;
 }
 
