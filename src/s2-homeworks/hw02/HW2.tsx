@@ -2,19 +2,6 @@ import React, { useState } from 'react'
 import Affairs from './affairs/Affairs'
 import s2 from '../../s1-main/App.module.css'
 
-/*
-* 1 - описать типы AffairPriorityType, AffairType
-* 2 - указать нужный тип для defaultAffairs
-* 3 - дописать типы и логику функции filterAffairs и проверить её тестами
-* 4 - выполнить пункт 3 для функции deleteAffair
-* 5 - указать нужный тип в useState с affairs
-* 6 - дописать тип и логику функции deleteAffairCallback
-* 7 - в файле Affairs.tsx дописать типизацию пропсов
-* 8 - в файле Affairs.tsx дописать логику функций setAll, setHigh, setMiddle, setLow
-* 9 - в файле Affair.tsx дописать типизацию пропсов
-* 10 - в файле Affair.tsx дописать функции deleteCallback и использовать
-* 11 - в файле Affair.tsx отобразить приходящие данные
-* */
 
 export type AffairPriorityType = 'high' | 'low' | 'middle'
 
@@ -35,7 +22,8 @@ export const filterAffairs = (affairs: AffairType[], filter: string): AffairType
 }
 
 export const deleteAffair = (affairs: AffairType[], _id: number): AffairType[] => {
-  return affairs.filter(a => a._id !== _id)
+  let deletedAffair = affairs.filter(a => a._id !== _id)
+  return deletedAffair
 }
 
 function HW2() {
@@ -46,21 +34,21 @@ function HW2() {
     { _id: 4, name: 'work', priority: 'high' },
     { _id: 5, name: 'html & css', priority: 'middle' },
   ]
-  const [affairs, setAffairs] = useState<AffairType[]>(defaultAffairs)
+  let [affairs, setAffairs] = useState<AffairType[]>(defaultAffairs)
   const [filter, setFilter] = useState<FilterType>('all')
 
 
-  const filteredAffairs = filterAffairs(affairs, filter)
-
-  const setFilterHandle = (filter: FilterType) => {
-    let affairsCopy = defaultAffairs
-    setFilter(filter)
-    setAffairs(filterAffairs(affairsCopy, filter))
-  }
 
   const deleteAffairCallback = (_id: number) => {
-    setAffairs(deleteAffair(affairs, _id))
+    let updatedAffairs = deleteAffair(affairs, _id)
+    setAffairs(updatedAffairs)
   }
+
+  const setFilterHandle = (filter: FilterType) => {
+    setFilter(filter)
+  }
+
+  const filteredAffairs = filterAffairs(affairs, filter)
 
   return (
     <div id={'hw2'} className="hw2">
