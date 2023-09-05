@@ -12,6 +12,13 @@ export type AffairType = {
 }
 export type FilterType = 'all' | AffairPriorityType
 
+const defaultAffairs: AffairType[] = [
+  { _id: 1, name: 'React', priority: 'high' }, // студенты могут изменить содержимое name и количество элементов в массиве, ...priority не менять!
+  { _id: 2, name: 'anime', priority: 'low' },
+  { _id: 3, name: 'games', priority: 'low' },
+  { _id: 4, name: 'work', priority: 'high' },
+  { _id: 5, name: 'html & css', priority: 'middle' },
+]
 
 export const filterAffairs = (affairs: AffairType[], filter: string): AffairType[] => {
   if (filter === "all") {
@@ -27,13 +34,6 @@ export const deleteAffair = (affairs: AffairType[], _id: number): AffairType[] =
 }
 
 function HW2() {
-  const defaultAffairs: AffairType[] = [
-    { _id: 1, name: 'React', priority: 'high' }, // студенты могут изменить содержимое name и количество элементов в массиве, ...priority не менять!
-    { _id: 2, name: 'anime', priority: 'low' },
-    { _id: 3, name: 'games', priority: 'low' },
-    { _id: 4, name: 'work', priority: 'high' },
-    { _id: 5, name: 'html & css', priority: 'middle' },
-  ]
   let [affairs, setAffairs] = useState<AffairType[]>(defaultAffairs)
   const [filter, setFilter] = useState<FilterType>('all')
 
@@ -51,7 +51,7 @@ function HW2() {
   const filteredAffairs = filterAffairs(affairs, filter)
 
   return (
-    <div id={'hw2'} className="hw2">
+    <div id={'hw2'} className={s2.hw2}>
       <div className={s2.hwTitle}>Case two</div>
       <hr className={s2.hr} />
       <div className={s2.hw}>
@@ -62,6 +62,7 @@ function HW2() {
           filter={filter}
         />
       </div>
+      <hr className={s2.hr} />
     </div>
   )
 }

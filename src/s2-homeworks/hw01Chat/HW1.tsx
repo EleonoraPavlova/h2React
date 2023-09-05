@@ -23,7 +23,6 @@ export type MessageOneType = {
 }
 
 
-
 export const message0: MessageType = {
   id: 0,
   user: {

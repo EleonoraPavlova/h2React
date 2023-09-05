@@ -1,5 +1,5 @@
 import React from 'react'
-import {pureAddUser} from '../GreetingContainer'
+import { pureAddUser } from '../GreetingContainer'
 
 let name: any
 const setName = (a: any) => {
