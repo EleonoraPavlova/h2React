@@ -36,7 +36,7 @@ const HW3 = () => {
   }
 
   return (
-    <div id={'hw3'} className={style.hw3}>
+    <div id={'hw3'} className={s2.hw2}>
       <div className={s2.hwTitle}>Case three</div>
       <hr className={s2.hr} />
       {/*для автоматической проверки дз (не менять)*/}
@@ -47,6 +47,7 @@ const HW3 = () => {
           addUserCallback={addUserCallback}
         />
       </div>
+      <hr className={s2.hr} />
     </div>
   )
 }

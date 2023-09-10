@@ -1,20 +1,20 @@
-.input:focus {
-}
+.input:focus {}
 
 .input {
+  width: 372px;
+  height: 36px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.inputWrapper {
-}
+.inputWrapper {}
 
-.superInput {
-}
+.superInput {}
 
 .errorInput {
+  border: 1px solid rgba(204, 20, 57, 1);
 }
 
-.errorInput:focus {
-}
+.errorInput:focus {}
 
-.error {
-}
+.error {}

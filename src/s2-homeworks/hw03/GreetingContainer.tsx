@@ -69,15 +69,4 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({ users, addUse
   )
 }
 
-{/* <Greeting
-  name={name}
-  setNameCallback={setNameCallback}
-  addUser={addUser}
-  onBlur={onBlur}
-  onEnter={(value) => onEnter()}
-  error={error}
-  totalUsers={totalUsers}
-  lastUserName={lastUserName}
-/> */}
-
 export default GreetingContainer

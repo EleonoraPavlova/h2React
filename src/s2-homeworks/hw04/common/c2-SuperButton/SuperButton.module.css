@@ -1,36 +1,40 @@
 .button {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  width: 132px;
+  height: 30px;
+  border-radius: 3px;
+  border: none;
+  padding: 5px 24px 5px 24px;
 }
 
 .disabled {
+  opacity: 50%;
+  background: rgba(0, 102, 204, 1);
 }
 
-.secondary {
-}
+.secondary {}
 
 .default {
+  background: rgba(0, 102, 204, 1);
 }
 
 .red {
+  background: rgba(204, 20, 57, 1);
 }
 
-.default:hover {
-}
+.default:hover {}
 
-.red:hover {
-}
+.red:hover {}
 
-.secondary:hover {
-}
+.secondary:hover {}
 
 
-.default:active {
-}
+.default:active {}
 
-.secondary:active {
-}
+.secondary:active {}
 
-.red:active {
-}
+.red:active {}
 
-.button:disabled {
-}
+.button:disabled {}
