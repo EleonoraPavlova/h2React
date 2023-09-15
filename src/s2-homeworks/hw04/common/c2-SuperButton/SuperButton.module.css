@@ -7,34 +7,55 @@
   border-radius: 3px;
   border: none;
   padding: 5px 24px 5px 24px;
+  color: white;
+  background: transparent;
 }
 
 .disabled {
+  color: gray;
   opacity: 50%;
   background: rgba(0, 102, 204, 1);
 }
 
-.secondary {}
+.secondary {
+  width: 176px;
+  color: #0066CC;
+  border: 1px solid #0066CC;
+}
 
 .default {
-  background: rgba(0, 102, 204, 1);
+  background-color: rgba(0, 102, 204, 1);
 }
 
 .red {
-  background: rgba(204, 20, 57, 1);
+  background-color: rgba(204, 20, 57, 1);
 }
 
-.default:hover {}
+.default:hover {
+  background-color: #0080FF;
+}
 
-.red:hover {}
+.red:hover {
+  background-color: #FF1A47;
+}
 
-.secondary:hover {}
+.secondary:hover {
+  background-color: #E5F0FA;
+}
 
 
-.default:active {}
+.default:active {
+  background-color: #0059B2;
+}
 
-.secondary:active {}
+.secondary:active {
+  background-color: #C9E5FF;
+  border: 1px solid #0066CC;
+  color: #0066CC
+}
 
-.red:active {}
+.red:active {
+  background-color: #B21232;
+}
 
-.button:disabled {}
+/* .button:disabled {} */

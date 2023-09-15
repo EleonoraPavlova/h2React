@@ -29,11 +29,7 @@ const Stand = () => {
             onChangeText={setValue}
             error={error}
             onEnter={() => {
-              setError(
-                stateForAllInputs.trim()
-                  ? ''
-                  : 'Error'
-              )
+              setError(stateForAllInputs.trim() ? '' : 'Error')
               setValue('')
             }}
           />
@@ -54,7 +50,7 @@ const Stand = () => {
         <div>
           <SuperButton
             id={'hw4-super-button-disabled'}
-            xType={'red'}
+            xType={'disabled'}
             disabled
           >
             Disabled
