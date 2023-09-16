@@ -1,4 +1,6 @@
-.input:focus {}
+.input:focus {
+  border: 1px solid green;
+}
 
 .input {
   width: 372px;
