@@ -12,7 +12,7 @@
   flex-direction: column;
 }
 
-.superInput {}
+/* .superInput {} */
 
 .errorInput {
   border: 1px solid #CC1439;
