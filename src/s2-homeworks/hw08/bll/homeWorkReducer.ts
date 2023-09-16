@@ -1,4 +1,4 @@
-import {UserType} from '../HW8'
+import { UserType } from '../HW8'
 
 type ActionType =
     | { type: 'sort'; payload: 'up' | 'down' }
