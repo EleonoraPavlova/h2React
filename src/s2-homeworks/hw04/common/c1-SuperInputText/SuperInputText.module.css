@@ -14,15 +14,17 @@
   flex-direction: column;
 }
 
-/* .superInput {} */
+.superInput {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
 
 .errorInput {
   border: 1px solid #CC1439;
 }
 
-/* .errorInput:focus {
-
-} */
+.errorInput:focus {
+  border: 2px solid #CC1439;
+}
 
 .error {
   padding-bottom: 3px;
