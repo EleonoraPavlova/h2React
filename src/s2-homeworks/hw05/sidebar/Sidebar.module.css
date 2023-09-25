@@ -1,5 +1,5 @@
 .sidebar {
-  display: none;
+  visibility: hidden;
   position: absolute;
   margin-top: -780px;
   width: 317px;
@@ -13,7 +13,7 @@
 }
 
 .sidebar.open {
-  display: block;
+  visibility: visible;
 }
 
 .background {
