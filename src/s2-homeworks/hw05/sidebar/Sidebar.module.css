@@ -8,7 +8,6 @@
   padding: 20px;
   border-radius: 15px;
   margin-bottom: 10px;
-  z-index: 2;
   box-shadow: 0px 1px 2px 0px rgba(29, 33, 38, 0.10), 0px 10px 40px 0px rgba(29, 33, 38, 0.13);
 }
 
@@ -19,8 +18,7 @@
 .background {
   height: 720px;
   opacity: 0.2;
-  background: #000;
-  z-index: 1;
+  background: transparent;
 }
 
 .nav {
