@@ -11,7 +11,7 @@ import Stand from './Stand'
 
 const HW4 = () => {
   return (
-    <div id={'hw4'}>
+    <div id={'hw4'} >
       <div className={s2.hwTitle}>Case four</div>
       <hr className={s2.hr} />
 
