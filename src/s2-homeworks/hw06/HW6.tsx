@@ -11,11 +11,11 @@ const HW6 = () => {
   const [value, setValue] = useState<string>("")
 
   const save = () => {
-    return saveState<string>("hw6-editable-span", value)
+    return saveState<string>("hw6-save", value)
   }
 
   const restore = () => {
-    let restor = restoreState<string>("hw6-editable-span", value)
+    let restor = restoreState<string>("hw6-save", value)
     setValue(restor)
   }
 
