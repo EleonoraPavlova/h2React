@@ -2,16 +2,7 @@ import React, { useState } from 'react'
 import { v1 } from 'uuid'
 import s2 from '../../s1-main/App.module.css'
 import GreetingContainer from './GreetingContainer'
-import style from "./Greeting.module.css"
 
-/*
-* 3 - дописать типы и логику функции pureAddUserCallback и проверить её тестами
-* 6 - в файле GreetingContainer.tsx дописать тип и логику функции setNameCallback
-* 7 - в файле GreetingContainer.tsx дописать логику функций pureAddUser, pureOnBlur, pureOnEnter и проверить их тестами
-* 8 - в файле GreetingContainer.tsx вычислить количество добавленных и имя последнего (totalUsers, lastUserName)
-
-* 10 - в файле Greeting.tsx вычислить inputClass в зависимости от наличия ошибки
-* */
 
 export type UserType = {
   _id: string
