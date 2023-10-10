@@ -5,12 +5,8 @@ import s2 from '../../s1-main/App.module.css'
 import s from './HW7.module.css'
 
 
-export type Option = {
-  id: number,
-  value: string
-}
 
-const arr: Array<Option> = [
+const arr = [
   { id: 1, value: 'Pre-junior' },
   { id: 2, value: 'Junior' },
   { id: 3, value: 'Junior +' },

@@ -5,7 +5,7 @@ import React, {
   HTMLAttributes,
 } from 'react'
 import s from './SuperRadio.module.css'
-import { Option } from "../../HW7"
+
 
 type DefaultRadioPropsType = DetailedHTMLProps<
   InputHTMLAttributes<HTMLInputElement>,
@@ -18,7 +18,7 @@ type DefaultSpanPropsType = DetailedHTMLProps<
 >
 
 type SuperRadioPropsType = Omit<DefaultRadioPropsType, 'type'> & {
-  options?: Option[]
+  options?: any[]
   onChangeOption?: (id: number) => void
   spanProps?: DefaultSpanPropsType // пропсы для спана
 }
@@ -35,7 +35,6 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
   ...restProps
 }) => {
   const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log("SuperRadio", e.currentTarget.value)
     onChangeOption?.(Number(e.currentTarget.value))
   }
 
