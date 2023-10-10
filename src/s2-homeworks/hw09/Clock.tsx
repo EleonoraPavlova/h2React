@@ -34,7 +34,6 @@ function Clock() {
     setShow(false)
   }
 
-  let dateC = new Date();
   const stringTime = new Intl.DateTimeFormat("ru", {
     hour: "numeric",
     minute: "numeric",
@@ -54,9 +53,9 @@ function Clock() {
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >
-        <span id={'hw9-day'}>{stringDay.format(dateC)}</span>, {' '}
+        <span id={'hw9-day'}>{stringDay.format(date)}</span>, {' '}
         <span id={'hw9-time'}>
-          <strong> {stringTime.format(dateC)}</strong>
+          <strong> {stringTime.format(date)}</strong>
         </span>
       </div>
 
@@ -64,8 +63,8 @@ function Clock() {
         <div className={s.more}>
           {show ? (
             <>
-              <span id={'hw9-month'}>{stringMonth.format(dateC)}</span>,{' '}
-              <span id={'hw9-date'}>{stringDate.format(dateC)}</span>
+              <span id={'hw9-month'}>{stringMonth.format(date)}</span>,{' '}
+              <span id={'hw9-date'}>{stringDate.format(date)}</span>
             </>
           ) : (
             <>
