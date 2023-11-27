@@ -6,7 +6,6 @@ import SuperRange from './common/c7-SuperRange/SuperRange'
 
 
 function HW11() {
-  // for autotests // не менять // можно подсунуть в локалСторэдж нужные числа, чтоб увидеть как они отображаются
   const [value1, setValue1] = useState(restoreState<number>('hw11-value1', 0))
   const [value2, setValue2] = useState(restoreState<number[]>('hw11-value2', [0, 100]))
 
@@ -18,13 +17,10 @@ function HW11() {
       setValue1(value)
       setValue2([value, value2[1]])
     }
-    console.log("event.target", event.target)
-    console.log("typeof value", typeof value)
-    //  если пришёл массив - сохранить значения в оба useState, иначе в первый
   }
 
   return (
-    <div id={'hw11'}>
+    <div id={'hw11'} className={s2.hw1}>
       <div className={s2.hwTitle}>Case #11</div>
       <hr className={s2.hr} />
       <div className={s2.hw}>

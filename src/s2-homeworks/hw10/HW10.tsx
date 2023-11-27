@@ -8,41 +8,41 @@ import { Loader } from './Loader'
 
 
 const HW10 = () => {
-    let isLoading = useSelector<AppStoreType>(state => state.loading.isLoading)
+  let isLoading = useSelector<AppStoreType>(state => state.loading.isLoading)
 
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
-    const setLoading = () => {
-        dispatch(loadingAC(!isLoading))
+  const setLoading = () => {
+    dispatch(loadingAC(!isLoading))
 
-        const timerId = setTimeout(() => {
-            dispatch(loadingAC(false))
-        }, 1500)
-        return () => clearTimeout(timerId)
-    }
+    const timerId = setTimeout(() => {
+      dispatch(loadingAC(false))
+    }, 1500)
+    return () => clearTimeout(timerId)
+  }
 
-    return (
+  return (
 
-        <div id={'hw10'} className={s2.hw1}>
-            <div className={s2.hwTitle}>Case #10</div>
-            <hr className={s2.hr} />
-            <div className={s2.hw}>
+    <div id={'hw10'} className={s2.hw1}>
+      <div className={s2.hwTitle}>Case #10</div>
+      <hr className={s2.hr} />
+      <div className={s2.hw}>
 
-                {isLoading ? (
-                    <div id={'hw10-loading'}>
-                        <Loader />
-                    </div>
-                ) : (
-                    <SuperButton
-                        id={'hw10-button-start-loading'}
-                        onClick={setLoading}
-                    >
-                        Set loading...
-                    </SuperButton>
-                )}
-            </div>
-        </div>
-    )
+        {isLoading ? (
+          <div id={'hw10-loading'}>
+            <Loader />
+          </div>
+        ) : (
+          <SuperButton
+            id={'hw10-button-start-loading'}
+            onClick={setLoading}
+          >
+            Set loading...
+          </SuperButton>
+        )}
+      </div>
+    </div>
+  )
 }
 
 export default HW10
