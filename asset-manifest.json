@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/h2React/static/css/main.f8299acb.css",
-    "main.js": "/h2React/static/js/main.7cd3d5f4.js",
+    "main.css": "/h2React/static/css/main.7654af36.css",
+    "main.js": "/h2React/static/js/main.4afaadb6.js",
     "static/js/787.a903ab96.chunk.js": "/h2React/static/js/787.a903ab96.chunk.js",
     "static/media/avatar.png": "/h2React/static/media/avatar.d947cb9d0d13765666b6.png",
     "static/media/200.svg": "/h2React/static/media/200.96248f7df0dde10e0a82ac30418f50bc.svg",
@@ -14,12 +14,12 @@
     "static/media/checked.svg": "/h2React/static/media/checked.b75ca55e8759862b4083.svg",
     "static/media/burger.svg": "/h2React/static/media/burger.700e416f7bfe3697f96b36c778d25355.svg",
     "index.html": "/h2React/index.html",
-    "main.f8299acb.css.map": "/h2React/static/css/main.f8299acb.css.map",
-    "main.7cd3d5f4.js.map": "/h2React/static/js/main.7cd3d5f4.js.map",
+    "main.7654af36.css.map": "/h2React/static/css/main.7654af36.css.map",
+    "main.4afaadb6.js.map": "/h2React/static/js/main.4afaadb6.js.map",
     "787.a903ab96.chunk.js.map": "/h2React/static/js/787.a903ab96.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f8299acb.css",
-    "static/js/main.7cd3d5f4.js"
+    "static/css/main.7654af36.css",
+    "static/js/main.4afaadb6.js"
   ]
 }
