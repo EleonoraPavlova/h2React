@@ -17,15 +17,21 @@ const SuperButton: React.FC<SuperButtonPropsType> = (
     ...restProps // все остальные пропсы попадут в объект restProps, там же будет children
   }
 ) => {
-  const finalClassName = s.button
-    + (xType === 'red' ? ' ' + s.red : ' ' + s.button)
-    + (xType === 'secondary' ? ' ' + s.secondary : ' ' + s.default)
-    + (disabled ? ' ' + s.disabled : ' ' + s.button)
+  const finalClassName = `${s.button} ${xType === 'red' ? s.red
+    : xType === 'secondary' ? s.secondary
+      : s.default} ${disabled ? s.disabled : ''}`
 
+  // const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  //   if (disabled) {
+  //     event.preventDefault();
+  //     event.stopPropagation();
+  //   }
+  // }
 
   return (
     <button
       disabled={disabled}
+      // onClick={handleClick}
       className={finalClassName}
       {...restProps} // отдаём кнопке остальные пропсы если они есть (children там внутри)
     />

@@ -11,10 +11,10 @@
   background: transparent;
 }
 
-.disabled {
+.button:disabled {
   color: gray;
   opacity: 50%;
-  background: rgba(0, 102, 204, 1);
+  cursor: not-allowed;
 }
 
 .secondary {
@@ -57,5 +57,3 @@
 .red:active {
   background-color: #B21232;
 }
-
-/* .button:disabled {} */
