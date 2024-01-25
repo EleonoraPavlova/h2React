@@ -11,10 +11,14 @@
   background: transparent;
 }
 
-.button:disabled {
+.disabled {
   color: gray;
   opacity: 50%;
   cursor: not-allowed;
+}
+
+.disabled.secondary:hover {
+  background-color: inherit;
 }
 
 .secondary {
@@ -42,7 +46,6 @@
 .secondary:hover {
   background-color: #E5F0FA;
 }
-
 
 .default:active {
   background-color: #0059B2;
