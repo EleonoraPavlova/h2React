@@ -29,6 +29,7 @@ const HW14 = () => {
       .then((res) => {
         if (res) setTechs(res.data.techs)
         setLoading(false)
+        setFind('')
       })
   }
 
