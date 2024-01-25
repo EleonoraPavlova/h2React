@@ -56,6 +56,7 @@ const HW15 = () => {
         // сохранить пришедшие данные
 
         //
+        setLoading(false)
       })
   }
 
@@ -118,12 +119,12 @@ const HW15 = () => {
 
         <div className={s.rowHeader}>
           <div className={s.techHeader}>
-            tech
+            Tech
             <SuperSort sort={sort} value={'tech'} onChange={onChangeSort} />
           </div>
 
           <div className={s.developerHeader}>
-            developer
+            Developer
             <SuperSort sort={sort} value={'developer'} onChange={onChangeSort} />
           </div>
         </div>

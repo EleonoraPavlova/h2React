@@ -2,16 +2,19 @@
     width: 50vw;
 }
 
-.developer {
-
-}
+.developer {}
 
 .techHeader {
     width: 50vw;
+    color: #000000;
+    font-weight: 600;
+    font-size: 14px;
 }
 
 .developerHeader {
-
+    color: #000000;
+    font-weight: 600;
+    font-size: 14px;
 }
 
 .row {
@@ -20,8 +23,11 @@
 
 .rowHeader {
     display: flex;
+    gap: 10px;
+    width: 49%;
+    background-color: #E5E5E5;
+    padding: 15px;
+    border-radius: 5px;
 }
 
-.loading {
-
-}
+.loading {}
