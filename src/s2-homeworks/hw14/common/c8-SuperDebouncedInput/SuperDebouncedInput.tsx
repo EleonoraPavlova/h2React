@@ -36,7 +36,6 @@ const SuperDebouncedInput: React.FC<SuperDebouncedInputPropsType> = ({
       const newTimerId = setTimeout(() => {
         onDebouncedChange(value)
       }, 1500)
-      return clearTimeout(newTimerId)
     }
   }
 

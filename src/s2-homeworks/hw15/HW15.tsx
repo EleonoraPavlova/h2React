@@ -6,14 +6,6 @@ import SuperPagination from './common/c9-SuperPagination/SuperPagination'
 import { useSearchParams } from 'react-router-dom'
 import SuperSort from './common/c10-SuperSort/SuperSort'
 
-/*
-* 1 - дописать SuperPagination
-* 2 - дописать SuperSort
-* 3 - проверить pureChange тестами
-* 3 - дописать sendQuery, onChangePagination, onChangeSort в HW15
-* 4 - сделать стили в соответствии с дизайном
-* 5 - добавить HW15 в HW5/pages/JuniorPlus
-* */
 
 type TechType = {
   id: number
@@ -51,37 +43,30 @@ const HW15 = () => {
     setLoading(true)
     getTechs(params)
       .then((res) => {
-        // делает студент
-
-        // сохранить пришедшие данные
-
-        //
+        if (res) setTechs(res.data.techs)
         setLoading(false)
       })
   }
 
   const onChangePagination = (newPage: number, newCount: number) => {
-    // делает студент
-
-    // setPage(
-    // setCount(
-
-    // sendQuery(
-    // setSearchParams(
-
-    //
+    // setPage(newPage)
+    // setCount(newCount)
+    // sendQuery({ newPage, newCount })
+    // setSearchParams(prev => prev + newPage)
+    setPage(newPage);
+    setCount(newCount);
+    const updatedSearchParams = new URLSearchParams(searchParams);
+    updatedSearchParams.set("page", newPage.toString());
+    setSearchParams(updatedSearchParams);
+    sendQuery({ page: newPage, count: newCount });
   }
 
   const onChangeSort = (newSort: string) => {
-    // делает студент
+    setSort(newSort)
+    setPage(1)
+    sendQuery(newSort)
+    setSearchParams(newSort)
 
-    // setSort(
-    // setPage(1) // при сортировке сбрасывать на 1 страницу
-
-    // sendQuery(
-    // setSearchParams(
-
-    //
   }
 
   useEffect(() => {
@@ -92,24 +77,28 @@ const HW15 = () => {
   }, [])
 
   const mappedTechs = techs.map(t => (
-    <div key={t.id} className={s.row}>
-      <div id={'hw15-tech-' + t.id} className={s.tech}>
-        {t.tech}
-      </div>
+    <div key={t.id} >
+      <div className={s.row}>
+        <div id={'hw15-tech-' + t.id} className={s.tech}>
+          {t.tech}
+        </div>
 
-      <div id={'hw15-developer-' + t.id} className={s.developer}>
-        {t.developer}
+        <div id={'hw15-developer-' + t.id} className={s.developer}>
+          {t.developer}
+        </div>
       </div>
+      <hr className={s2.hr} />
     </div>
   ))
 
   return (
-    <div id={'hw15'} className={s2.hw1}>
+    <div id={'hw15'} className={`${s2.hw1} ${idLoading && s.loading}`}>
       <div className={s2.hwTitle}>Case #15</div>
       <hr className={s2.hr} />
       <div className={s2.hw}>
-        {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
-
+        {idLoading &&
+          <div id={'hw15-loading'} className={s.loading}></div>
+        }
         <SuperPagination
           page={page}
           itemsCountForPage={count}
@@ -131,7 +120,7 @@ const HW15 = () => {
 
         {mappedTechs}
       </div>
-    </div>
+    </div >
   )
 }
 
