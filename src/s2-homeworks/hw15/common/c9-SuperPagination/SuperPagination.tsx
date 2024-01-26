@@ -26,7 +26,7 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
     onChange(page, count)
   }
 
-  debugger
+
   return (
     <div className={s.pagination}>
       <Pagination

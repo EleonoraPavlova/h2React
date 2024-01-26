@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const downIcon = '../../images/down.svg'
+const downIcon = ''
 const upIcon = '../../images/top.svg'
 const noneIcon = ''
 
