@@ -31,11 +31,14 @@ const HW14 = () => {
         setLoading(false)
         setFind('')
       })
+      .catch((error) => {
+        setLoading(false)
+      })
   }
 
   const onChangeText = (value: string) => {
     setFind(value)
-    setSearchParams(value)
+    setSearchParams({ find: value })
   }
 
   useEffect(() => {
