@@ -31,7 +31,7 @@ const HW14 = () => {
         setLoading(false)
         setFind('')
       })
-      .catch((error) => {
+      .catch(() => {
         setLoading(false)
       })
   }
