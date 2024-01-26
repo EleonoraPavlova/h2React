@@ -1,9 +1,8 @@
 import React from 'react'
+import downIcon from '../../images/down.svg'
+import upIcon from '../../images/up.svg'
+import noneIcon from '../../images/bg.png'
 
-
-const downIcon = ''
-const upIcon = '../../images/top.svg'
-const noneIcon = ''
 
 export type SuperSortPropsType = {
   id?: string
@@ -16,9 +15,9 @@ export const pureChange = (sort: string, down: string, up: string) => {
   if (sort === down) {
     return up;
   } else if (sort === up) {
-    return '';
+    return ''
   } else {
-    return down;
+    return down
   }
 }
 
@@ -31,19 +30,21 @@ const SuperSort: React.FC<SuperSortPropsType> = (
     onChange(pureChange(sort, down, up))
   }
 
-  const icon = sort === down
+  const icon = (sort === down)
     ? downIcon
     : sort === up
       ? upIcon
       : noneIcon
 
+  // debugger
   return (
     <span
       id={id + '-sort-' + value}
       onClick={onChangeCallback}
     >
       <img id={id + '-icon-' + sort}
-        src={icon === downIcon ? downIcon : icon === upIcon ? upIcon : noneIcon} />
+        style={{ width: "10px", height: "10px", margin: " 0 5px" }}
+        src={icon} />
     </span>
   )
 }

@@ -21,12 +21,11 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
     onChange(page, itemsCountForPage)
   }
 
-  const onChangeSelect = (event: ChangeEvent<HTMLSelectElement>) => {
-    const count = Number(event.currentTarget.value)
-    onChange(page, count)
+  const onChangeSelect = (id: number) => {
+    onChange(page, id)
   }
 
-
+  // debugger
   return (
     <div className={s.pagination}>
       <Pagination
@@ -57,7 +56,7 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
           { id: 7, value: 7 },
           { id: 10, value: 10 },
         ]}
-        onChange={onChangeSelect}
+        onChangeOption={onChangeSelect}
       />
 
       <span className={s.text2}>

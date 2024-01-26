@@ -44,21 +44,22 @@ const HW15 = () => {
     getTechs(params)
       .then((res) => {
         if (res) setTechs(res.data.techs)
+      })
+      .catch((e) => {
+        console.log(e)
+      })
+      .finally(() => {
         setLoading(false)
       })
   }
 
   const onChangePagination = (newPage: number, newCount: number) => {
-    // setPage(newPage)
-    // setCount(newCount)
-    // sendQuery({ newPage, newCount })
-    // setSearchParams(prev => prev + newPage)
     setPage(newPage);
     setCount(newCount);
-    const updatedSearchParams = new URLSearchParams(searchParams);
-    updatedSearchParams.set("page", newPage.toString());
-    setSearchParams(updatedSearchParams);
-    sendQuery({ page: newPage, count: newCount });
+    const updatedSearchParams = new URLSearchParams(searchParams)
+    updatedSearchParams.set("page", newPage.toString())
+    setSearchParams(updatedSearchParams)
+    sendQuery({ page: newPage, count: newCount })
   }
 
   const onChangeSort = (newSort: string) => {
@@ -92,12 +93,14 @@ const HW15 = () => {
   ))
 
   return (
-    <div id={'hw15'} className={`${s2.hw1} ${idLoading && s.loading}`}>
+    <div id={'hw15'} className={s2.hw1} >
       <div className={s2.hwTitle}>Case #15</div>
       <hr className={s2.hr} />
-      <div className={s2.hw}>
+      <div className={s2.hw} style={{ position: 'relative' }}>
         {idLoading &&
-          <div id={'hw15-loading'} className={s.loading}></div>
+          <div className={s.overlay}>
+            <div id={'hw15-loading'} className={s.loading}></div>
+          </div>
         }
         <SuperPagination
           page={page}
@@ -117,7 +120,6 @@ const HW15 = () => {
             <SuperSort sort={sort} value={'developer'} onChange={onChangeSort} />
           </div>
         </div>
-
         {mappedTechs}
       </div>
     </div >

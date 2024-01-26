@@ -1,5 +1,5 @@
 import React from 'react'
-import {pureChange} from '../SuperSort'
+import { pureChange } from '../SuperSort'
 
 test('sort ""', () => {
     const newSort = pureChange('', '1a', '0a')
