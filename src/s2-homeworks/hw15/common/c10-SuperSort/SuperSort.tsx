@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import downIcon from '../../images/down.svg'
 import upIcon from '../../images/up.svg'
 import noneIcon from '../../images/bg.png'
@@ -12,8 +12,9 @@ export type SuperSortPropsType = {
 }
 
 export const pureChange = (sort: string, down: string, up: string) => {
+  debugger
   if (sort === down) {
-    return up;
+    return up
   } else if (sort === up) {
     return ''
   } else {
@@ -23,12 +24,26 @@ export const pureChange = (sort: string, down: string, up: string) => {
 
 const SuperSort: React.FC<SuperSortPropsType> = (
   { sort, value, onChange, id = 'hw15' }) => {
+
+  const [clickCount, setClickCount] = useState(0)
+
   const up = '0' + value
   const down = '1' + value
 
   const onChangeCallback = () => {
-    onChange(pureChange(sort, down, up))
+    const newSort = pureChange(sort, down, up)
+    if (newSort === '') {
+      // Если сортировка выключена, увеличиваем счетчик кликов
+      setClickCount(prevCount => prevCount + 1);
+    } else {
+      // Если сортировка активна, сбрасываем счетчик кликов
+      setClickCount(0);
+    }
+    onChange(newSort);
   }
+
+  const isSortActive = sort === down || sort === up
+  const isSortDisabled = clickCount >= 2
 
   const icon = (sort === down)
     ? downIcon
@@ -36,14 +51,24 @@ const SuperSort: React.FC<SuperSortPropsType> = (
       ? upIcon
       : noneIcon
 
-  // debugger
+
+  const iconStyle: React.CSSProperties = {
+    width: '10px',
+    height: '10px',
+    margin: '0 5px',
+    filter: isSortActive ? 'none' : 'green',
+    opacity: isSortDisabled ? '0.5' : '1',
+    pointerEvents: isSortDisabled ? 'none' : 'auto',
+  }
+
+
   return (
     <span
       id={id + '-sort-' + value}
       onClick={onChangeCallback}
     >
       <img id={id + '-icon-' + sort}
-        style={{ width: "10px", height: "10px", margin: " 0 5px" }}
+        style={iconStyle}
         src={icon} />
     </span>
   )
