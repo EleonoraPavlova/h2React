@@ -1,8 +1,8 @@
 import React from 'react'
 
 
-const downIcon = '../../images/down.png'
-const upIcon = '../../images/top.png'
+const downIcon = '../../images/down.svg'
+const upIcon = '../../images/top.svg'
 const noneIcon = ''
 
 export type SuperSortPropsType = {
