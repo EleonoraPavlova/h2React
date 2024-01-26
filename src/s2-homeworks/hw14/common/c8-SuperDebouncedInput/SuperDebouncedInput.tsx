@@ -30,9 +30,6 @@ const SuperDebouncedInput: React.FC<SuperDebouncedInputPropsType> = ({
     onChangeText?.(value)
 
     if (onDebouncedChange) {
-      // if (timerId) {
-      //   clearTimeout(timerId)
-      // }
       const newTimerId = setTimeout(() => {
         onDebouncedChange(value)
       }, 1500)
@@ -44,9 +41,9 @@ const SuperDebouncedInput: React.FC<SuperDebouncedInputPropsType> = ({
   useEffect(() => {
     return () => {
       if (timerId) {
-        clearTimeout(timerId); // Очищаем таймер при размонтировании компонента
+        clearTimeout(timerId)
       }
-    };
+    }
   }, [timerId])
 
   return (
