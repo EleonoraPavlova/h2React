@@ -14,7 +14,6 @@ export type SuperPaginationPropsType = {
 const SuperPagination: React.FC<SuperPaginationPropsType> = (
   { page, itemsCountForPage, totalCount, onChange, id = 'hw15' }
 ) => {
-
   const lastPage = Math.ceil(totalCount / itemsCountForPage)
 
   const onChangeCallback = (event: ChangeEvent<unknown>, page: number) => {

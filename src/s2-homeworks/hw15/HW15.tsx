@@ -5,6 +5,7 @@ import axios from 'axios'
 import SuperPagination from './common/c9-SuperPagination/SuperPagination'
 import { useSearchParams } from 'react-router-dom'
 import SuperSort from './common/c10-SuperSort/SuperSort'
+import { log } from "console"
 
 
 type TechType = {
@@ -56,20 +57,26 @@ const HW15 = () => {
       })
   }
 
+
+
   const onChangePagination = (newPage: number, newCount: number) => {
     setPage(newPage)
     setCount(newCount)
     const updatedSearchParams = new URLSearchParams(searchParams)
     updatedSearchParams.set("page", newPage.toString())
+    updatedSearchParams.set('count', newCount.toString())
     setSearchParams(updatedSearchParams)
     sendQuery({ page: newPage, count: newCount })
   }
 
   const onChangeSort = (newSort: string) => {
+    const updatedSearchParams = new URLSearchParams(searchParams)
+    updatedSearchParams.set("page", '1');
+    updatedSearchParams.set('count', count.toString());
     setSort(newSort)
     setPage(1)
     sendQuery(newSort)
-    setSearchParams(newSort)
+    setSearchParams(updatedSearchParams)
   }
 
   useEffect(() => {
@@ -93,7 +100,7 @@ const HW15 = () => {
       <hr className={s2.hr} />
     </div>
   ))
-
+  console.log(count);
   return (
     <div id={'hw15'} className={s2.hw1} >
       <div className={s2.hwTitle}>Case #15</div>
