@@ -43,7 +43,10 @@ const HW15 = () => {
     setLoading(true)
     getTechs(params)
       .then((res) => {
-        if (res) setTechs(res.data.techs)
+        if (res) {
+          setTechs(res.data.techs)
+          setTotalCount(res.data.totalCount)
+        }
       })
       .catch((e) => {
         console.log(e)
@@ -54,8 +57,8 @@ const HW15 = () => {
   }
 
   const onChangePagination = (newPage: number, newCount: number) => {
-    setPage(newPage);
-    setCount(newCount);
+    setPage(newPage)
+    setCount(newCount)
     const updatedSearchParams = new URLSearchParams(searchParams)
     updatedSearchParams.set("page", newPage.toString())
     setSearchParams(updatedSearchParams)
