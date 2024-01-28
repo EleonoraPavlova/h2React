@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/h2React/static/css/main.bc1369a2.css",
-    "main.js": "/h2React/static/js/main.9018f20b.js",
+    "main.js": "/h2React/static/js/main.b2a6f80c.js",
     "static/js/787.a903ab96.chunk.js": "/h2React/static/js/787.a903ab96.chunk.js",
     "static/media/avatar.png": "/h2React/static/media/avatar.d947cb9d0d13765666b6.png",
     "static/media/200.svg": "/h2React/static/media/200.96248f7df0dde10e0a82ac30418f50bc.svg",
@@ -17,11 +17,11 @@
     "static/media/down.svg": "/h2React/static/media/down.f93eba866a35ba04938e4bfc00cd126b.svg",
     "static/media/up.svg": "/h2React/static/media/up.84dc203ac671eae279899966e0d39e7c.svg",
     "main.bc1369a2.css.map": "/h2React/static/css/main.bc1369a2.css.map",
-    "main.9018f20b.js.map": "/h2React/static/js/main.9018f20b.js.map",
+    "main.b2a6f80c.js.map": "/h2React/static/js/main.b2a6f80c.js.map",
     "787.a903ab96.chunk.js.map": "/h2React/static/js/787.a903ab96.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bc1369a2.css",
-    "static/js/main.9018f20b.js"
+    "static/js/main.b2a6f80c.js"
   ]
 }
