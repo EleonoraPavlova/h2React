@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import downIcon from '../../images/down.svg'
 import upIcon from '../../images/up.svg'
 import noneIcon from '../../images/bg.png'
-import upDownIcon from '../../images/up-down.svg'
 
 export type SuperSortPropsType = {
   id?: string
@@ -12,13 +11,27 @@ export type SuperSortPropsType = {
 }
 
 export const pureChange = (sort: string, down: string, up: string) => {
-  if (sort === down) {
+  let firstSortValues = sort.slice(0, 2)
+  let firstDownValues = down.slice(0, 2)
+  let firstUpValues = up.slice(0, 2)
+
+  if (firstSortValues === firstDownValues) {
     return up
-  } else if (sort === up) {
-    return upDownIcon
-  } else {
-    return down
-  }
+  } else
+    if (firstSortValues === firstUpValues) {
+      return ''
+    } else {
+      return down
+    }
+
+
+  // if (sort === down) {
+  //   return up
+  // } else if (sort === up) {
+  //   return ""
+  // } else {
+  //   return down
+  // }
 }
 
 const SuperSort: React.FC<SuperSortPropsType> = (
@@ -31,42 +44,14 @@ const SuperSort: React.FC<SuperSortPropsType> = (
 
   const onChangeCallback = () => {
     onChange(pureChange(sort, down, up))
-    // const newSort = pureChange(sort, down, up)
-    // if (newSort === '') {
-    //   // Если сортировка выключена, увеличиваем счетчик кликов
-    //   setClickCount(prevCount => prevCount + 1);
-    // } else {
-    //   // Если сортировка активна, сбрасываем счетчик кликов
-    //   setClickCount(0);
-    // }
-    // onChange(newSort)
-    // // debugger
   }
-
-  // const isSortActive = sort === down || sort === up
-  // const isSortDisabled = clickCount >= 2
 
   const icon = (sort === down)
     ? downIcon
     : sort === up
       ? upIcon
-      : upDownIcon
+      : noneIcon
 
-
-  // const iconStyle: React.CSSProperties = {
-  //   width: '10px',
-  //   height: '10px',
-  //   margin: '0 5px',
-  //   filter: isSortActive ? 'none' : 'green',
-  //   opacity: isSortDisabled ? '0.5' : '1',
-  //   pointerEvents: isSortDisabled ? 'none' : 'auto',
-  // }
-
-  // useEffect(() => {
-  //   if (clickCount > 0) {
-  //     setClickCount(0)
-  //   }
-  // }, [sort])
 
   return (
     <span
