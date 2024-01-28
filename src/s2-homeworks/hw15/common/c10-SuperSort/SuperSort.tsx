@@ -11,33 +11,17 @@ export type SuperSortPropsType = {
 }
 
 export const pureChange = (sort: string, down: string, up: string) => {
-  let firstSortValues = sort.slice(0, 2)
-  let firstDownValues = down.slice(0, 2)
-  let firstUpValues = up.slice(0, 2)
-
-  if (firstSortValues === firstDownValues) {
+  if (sort === down) {
     return up
-  } else
-    if (firstSortValues === firstUpValues) {
-      return ''
-    } else {
-      return down
-    }
-
-
-  // if (sort === down) {
-  //   return up
-  // } else if (sort === up) {
-  //   return ""
-  // } else {
-  //   return down
-  // }
+  } else if (sort === up) {
+    return ""
+  } else {
+    return down
+  }
 }
 
 const SuperSort: React.FC<SuperSortPropsType> = (
   { sort, value, onChange, id = 'hw15' }) => {
-
-  // const [clickCount, setClickCount] = useState(0)
 
   const up = '0' + value
   const down = '1' + value
