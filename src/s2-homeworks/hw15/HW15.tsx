@@ -68,20 +68,12 @@ const HW15 = () => {
   const onChangePagination = (newPage: number, newCount: number) => {
     setPage(newPage)
     setCount(newCount)
-    // const updatedSearchParams = new URLSearchParams(searchParams)
-    // updatedSearchParams.set("page", newPage.toString())
-    // updatedSearchParams.set('count', newCount.toString())
-    // updatedSearchParams.set('sort', sort);
     const updatedSearchParams = getUrlParams(newPage, newCount, sort)
     setSearchParams(updatedSearchParams.toString())
     sendQuery({ sort, page: newPage, count: newCount })
   }
 
   const onChangeSort = (newSort: string) => {
-    // const updatedSearchParams = new URLSearchParams(searchParams)
-    // updatedSearchParams.set("page", '1');
-    // updatedSearchParams.set('count', count.toString());
-    // updatedSearchParams.set('sort', newSort);
     setSort(newSort)
     setPage(1)
     const updatedSearchParams = getUrlParams(1, count, newSort)
