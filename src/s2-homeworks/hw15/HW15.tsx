@@ -57,34 +57,40 @@ const HW15 = () => {
       })
   }
 
-
+  const getUrlParams = (newPage: number, newCount: number, newSort: string) => {
+    const updatedSearchParams = new URLSearchParams(searchParams)
+    updatedSearchParams.set("page", newPage.toString())
+    updatedSearchParams.set('count', newCount.toString())
+    updatedSearchParams.set('sort', newSort)
+    return updatedSearchParams
+  }
 
   const onChangePagination = (newPage: number, newCount: number) => {
     setPage(newPage)
     setCount(newCount)
-    const updatedSearchParams = new URLSearchParams(searchParams)
-    updatedSearchParams.set("page", newPage.toString())
-    updatedSearchParams.set('count', newCount.toString())
-    updatedSearchParams.set('sort', sort);
-    setSearchParams(updatedSearchParams)
+    // const updatedSearchParams = new URLSearchParams(searchParams)
+    // updatedSearchParams.set("page", newPage.toString())
+    // updatedSearchParams.set('count', newCount.toString())
+    // updatedSearchParams.set('sort', sort);
+    const updatedSearchParams = getUrlParams(newPage, newCount, sort)
+    setSearchParams(updatedSearchParams.toString())
     sendQuery({ sort, page: newPage, count: newCount })
   }
 
   const onChangeSort = (newSort: string) => {
-    const updatedSearchParams = new URLSearchParams(searchParams)
-    updatedSearchParams.set("page", '1');
-    updatedSearchParams.set('count', count.toString());
-    updatedSearchParams.set('sort', newSort);
-    setSort(newSort);
-    setPage(1);
-    sendQuery({ sort: newSort, count, page: 1 });
-    setSearchParams(updatedSearchParams)
+    // const updatedSearchParams = new URLSearchParams(searchParams)
+    // updatedSearchParams.set("page", '1');
+    // updatedSearchParams.set('count', count.toString());
+    // updatedSearchParams.set('sort', newSort);
+    setSort(newSort)
+    setPage(1)
+    const updatedSearchParams = getUrlParams(1, count, newSort)
+    setSearchParams(updatedSearchParams.toString())
+    sendQuery({ sort: newSort, count, page: 1 })
   }
 
   useEffect(() => {
     const params = Object.fromEntries(searchParams);
-    console.log(params.page);
-    console.log(+params.page);
     const pageNumber = params.page ? +params.page : page;
     const elementsCount = params.count ? +params.count : count;
     sendQuery({ sort: params.sort, page: pageNumber, count: elementsCount });
