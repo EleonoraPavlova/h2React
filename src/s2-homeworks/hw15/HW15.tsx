@@ -70,7 +70,6 @@ const HW15 = () => {
     setPage(1)
     sendQuery(newSort)
     setSearchParams(newSort)
-
   }
 
   useEffect(() => {
@@ -78,7 +77,7 @@ const HW15 = () => {
     sendQuery({ page: params.page, count: params.count })
     setPage(+params.page || 1)
     setCount(+params.count || 4)
-  }, [])
+  }, [searchParams])
 
   const mappedTechs = techs.map(t => (
     <div>
